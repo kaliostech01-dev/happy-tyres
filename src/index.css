@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+  
+  .animate-spin-reverse {
+    animation: spin-reverse 15s linear infinite;
+  }
+  
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .animate-tire-to-truck {
+    animation: tire-to-truck 8s ease-in-out infinite;
+  }
+  
+  .animate-truck-appear {
+    animation: truck-appear 8s ease-in-out infinite;
+  }
+  
+  @keyframes tire-to-truck {
+    0%, 40% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    50%, 60% {
+      opacity: 0;
+      transform: scale(0.8) rotate(180deg);
+    }
+    61%, 100% {
+      opacity: 0;
+      transform: scale(0.8) rotate(360deg);
+    }
+  }
+  
+  @keyframes truck-appear {
+    0%, 60% {
+      opacity: 0;
+      transform: translateX(50px) scale(0.8);
+    }
+    70%, 90% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    91%, 100% {
+      opacity: 0;
+      transform: translateX(-50px) scale(0.8);
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-orange-600;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-orange-500 text-white;
+}
+
+/* Focus states */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid theme('colors.orange.500');
+  outline-offset: 2px;
+}
