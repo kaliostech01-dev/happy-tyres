@@ -50,36 +50,6 @@
   .animate-truck-appear {
     animation: truck-appear 8s ease-in-out infinite;
   }
-  
-  @keyframes tire-to-truck {
-    0%, 40% {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-    }
-    50%, 60% {
-      opacity: 0;
-      transform: scale(0.8) rotate(180deg);
-    }
-    61%, 100% {
-      opacity: 0;
-      transform: scale(0.8) rotate(360deg);
-    }
-  }
-  
-  @keyframes truck-appear {
-    0%, 60% {
-      opacity: 0;
-      transform: translateX(50px) scale(0.8);
-    }
-    70%, 90% {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
-    91%, 100% {
-      opacity: 0;
-      transform: translateX(-50px) scale(0.8);
-    }
-  }
 }
 
 /* Custom scrollbar */
