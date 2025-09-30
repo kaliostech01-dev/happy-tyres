@@ -96,91 +96,125 @@ const Hero = () => {
               <div className="w-80 h-80 mx-auto relative overflow-hidden">
                 {/* Scroll-Based Spinning Tire */}
                 <div className="tire-container absolute inset-0">
-                  {/* Outer tire ring */}
+                  {/* Realistic Tire Outer Ring */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full opacity-30"
-                    style={{ transform: `rotate(${scrollY * 0.5}deg)` }}
-                  ></div>
-                  
-                  {/* Main tire body */}
-                  <div 
-                    className="absolute inset-4 bg-gray-800 rounded-full border-4 border-orange-500/50"
+                    className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-full shadow-2xl"
                     style={{ transform: `rotate(${scrollY * 0.3}deg)` }}
-                  ></div>
-                  
-                  {/* Inner tire */}
-                  <div 
-                    className="absolute inset-12 bg-gray-900 rounded-full border-2 border-orange-400/30"
-                    style={{ transform: `rotate(${scrollY * 0.2}deg)` }}
-                  ></div>
-                  
-                  {/* Tire tread pattern */}
-                  <div 
-                    className="absolute inset-8"
-                    style={{ transform: `rotate(${scrollY * 0.4}deg)` }}
                   >
-                    {[...Array(8)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-2 h-8 bg-orange-500/60 rounded"
-                        style={{
-                          top: '50%',
-                          left: '50%',
-                          transformOrigin: '50% 0',
-                          transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-120px)`,
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Additional tread details */}
-                  <div 
-                    className="absolute inset-16"
-                    style={{ transform: `rotate(${scrollY * -0.3}deg)` }}
-                  >
-                    {[...Array(12)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-1 h-6 bg-orange-400/40 rounded"
-                        style={{
-                          top: '50%',
-                          left: '50%',
-                          transformOrigin: '50% 0',
-                          transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-80px)`,
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Center hub */}
-                  <div 
-                    className="absolute top-1/2 left-1/2 w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full transform -translate-x-1/2 -translate-y-1/2 border-2 border-orange-500/50"
-                    style={{ transform: `translate(-50%, -50%) rotate(${scrollY * 0.6}deg)` }}
-                  >
-                    <div className="absolute inset-2 bg-gray-900 rounded-full">
-                      {/* Hub spokes */}
-                      {[...Array(5)].map((_, i) => (
+                    {/* Tire sidewall text */}
+                    <div className="absolute inset-4 rounded-full border border-gray-600">
+                      {[...Array(16)].map((_, i) => (
                         <div
                           key={i}
-                          className="absolute w-0.5 h-6 bg-orange-500/60 rounded"
+                          className="absolute text-xs text-gray-500 font-mono"
+                          style={{
+                            top: '50%',
+                            left: '50%',
+                            transformOrigin: '0 0',
+                            transform: `translate(-50%, -50%) rotate(${i * 22.5}deg) translateY(-130px) rotate(90deg)`,
+                          }}
+                        >
+                          RETREAD
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tire Tread Pattern - Outer */}
+                  <div 
+                    className="absolute inset-2 rounded-full"
+                    style={{ transform: `rotate(${scrollY * 0.4}deg)` }}
+                  >
+                    {/* Main tread blocks */}
+                    {[...Array(24)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-3 h-8 bg-gray-700 rounded-sm"
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transformOrigin: '50% 0',
+                          transform: `translate(-50%, -50%) rotate(${i * 15}deg) translateY(-140px)`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Tire Tread Pattern - Middle */}
+                  <div 
+                    className="absolute inset-6 rounded-full"
+                    style={{ transform: `rotate(${scrollY * -0.2}deg)` }}
+                  >
+                    {/* Secondary tread pattern */}
+                    {[...Array(32)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-2 h-6 bg-gray-600 rounded-sm"
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transformOrigin: '50% 0',
+                          transform: `translate(-50%, -50%) rotate(${i * 11.25}deg) translateY(-120px)`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Inner Tire Body */}
+                  <div 
+                    className="absolute inset-12 bg-gradient-to-br from-gray-800 to-black rounded-full border-2 border-gray-700"
+                    style={{ transform: `rotate(${scrollY * 0.1}deg)` }}
+                  >
+                    {/* Inner tread details */}
+                    {[...Array(20)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-1 h-4 bg-gray-500 rounded"
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transformOrigin: '50% 0',
+                          transform: `translate(-50%, -50%) rotate(${i * 18}deg) translateY(-80px)`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Realistic Rim/Hub */}
+                  <div 
+                    className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-br from-gray-300 via-gray-400 to-gray-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg border-2 border-gray-500"
+                    style={{ transform: `translate(-50%, -50%) rotate(${scrollY * 0.5}deg)` }}
+                  >
+                    {/* Rim outer ring */}
+                    <div className="absolute inset-1 bg-gradient-to-br from-gray-200 to-gray-500 rounded-full">
+                      {/* Rim spokes */}
+                      {[...Array(6)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-8 bg-gradient-to-b from-gray-100 to-gray-400 rounded"
                           style={{
                             top: '50%',
                             left: '50%',
                             transformOrigin: '50% 0',
-                            transform: `translate(-50%, -50%) rotate(${i * 72}deg) translateY(-12px)`,
+                            transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-16px)`,
                           }}
                         />
                       ))}
+                      
+                      {/* Center cap */}
+                      <div className="absolute top-1/2 left-1/2 w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+                        <div className="absolute inset-1 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Scroll indicator */}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-                  <p className="text-sm text-gray-400 mb-2">Scroll to spin the tire</p>
-                  <div className="w-6 h-10 border-2 border-gray-600 rounded-full mx-auto">
-                    <div className="w-1 h-3 bg-orange-500 rounded-full mx-auto mt-2 animate-bounce"></div>
-                  </div>
+                  {/* Tire shine/highlight effect */}
+                  <div 
+                    className="absolute inset-8 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-transparent"
+                    style={{ transform: `rotate(${scrollY * 0.1}deg)` }}
+                  ></div>
                 </div>
               </div>
 
