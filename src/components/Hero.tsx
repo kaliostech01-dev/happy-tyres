@@ -117,44 +117,125 @@ const Hero = () => {
 
                 {/* Truck Transformation */}
                 <div className="truck-container absolute inset-0 opacity-0 animate-truck-appear">
-                  {/* Truck Body */}
-                  <div className="absolute top-16 left-8 w-64 h-32 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg border-2 border-orange-500/50">
-                    {/* Truck Cab */}
-                    <div className="absolute -left-16 top-4 w-20 h-24 bg-gradient-to-br from-gray-600 to-gray-700 rounded-l-lg border-2 border-orange-500/40">
-                      {/* Windows */}
-                      <div className="absolute top-2 left-2 w-6 h-6 bg-blue-400/30 rounded border border-blue-300/50"></div>
-                      <div className="absolute top-10 left-2 w-6 h-8 bg-blue-400/30 rounded border border-blue-300/50"></div>
-                      {/* Headlight */}
-                      <div className="absolute top-16 -left-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                  {/* Cybertruck Body - Main Structure */}
+                  <div className="absolute top-12 left-4 w-72 h-40">
+                    {/* Cybertruck Cab - Angular Design */}
+                    <div className="absolute left-0 top-8 w-24 h-32 bg-gradient-to-br from-gray-300 to-gray-500 transform skew-x-12 border-l-2 border-orange-400/60">
+                      {/* Windshield */}
+                      <div className="absolute top-2 left-2 w-16 h-12 bg-gradient-to-b from-blue-200/40 to-blue-300/60 transform -skew-x-12 border border-blue-300/40"></div>
+                      {/* Side Window */}
+                      <div className="absolute top-16 left-2 w-16 h-10 bg-gradient-to-b from-blue-200/30 to-blue-300/50 transform -skew-x-12 border border-blue-300/30"></div>
+                      {/* LED Headlight Strip */}
+                      <div className="absolute bottom-2 -left-1 w-20 h-2 bg-gradient-to-r from-blue-400 to-white animate-pulse"></div>
                     </div>
-                    
-                    {/* Cargo Area Pattern */}
-                    <div className="absolute inset-4 border border-orange-400/30 rounded">
-                      <div className="grid grid-cols-4 gap-2 h-full p-2">
-                        {[...Array(8)].map((_, i) => (
-                          <div key={i} className="bg-orange-500/20 rounded"></div>
-                        ))}
+
+                    {/* Cybertruck Bed - Angular Cargo Area */}
+                    <div className="absolute left-20 top-4 w-48 h-36 bg-gradient-to-br from-gray-400 to-gray-600 transform skew-x-6">
+                      {/* Tonneau Cover Lines */}
+                      <div className="absolute inset-2 border border-gray-300/30">
+                        <div className="h-full flex flex-col justify-between py-2">
+                          <div className="h-0.5 bg-gray-300/40"></div>
+                          <div className="h-0.5 bg-gray-300/40"></div>
+                          <div className="h-0.5 bg-gray-300/40"></div>
+                          <div className="h-0.5 bg-gray-300/40"></div>
+                        </div>
+                      </div>
+                      {/* Tailgate */}
+                      <div className="absolute right-0 top-0 w-1 h-full bg-orange-400/80"></div>
+                    </div>
+
+                    {/* Cybertruck Wheels - Modern Design */}
+                    <div className="absolute bottom-0 left-2 w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full border-2 border-orange-400/60">
+                      <div className="absolute inset-2 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full">
+                        {/* Wheel Spokes */}
+                        <div className="absolute inset-1 animate-spin-slow">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-0.5 h-4 bg-orange-400/80 rounded"
+                              style={{
+                                top: '50%',
+                                left: '50%',
+                                transformOrigin: '50% 0',
+                                transform: `translate(-50%, -50%) rotate(${i * 72}deg) translateY(-8px)`,
+                              }}
+                            />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Truck Wheels */}
-                  <div className="absolute bottom-12 left-4 w-12 h-12 bg-gray-800 rounded-full border-2 border-orange-500/50 animate-spin-slow">
-                    <div className="absolute inset-2 bg-gray-900 rounded-full"></div>
-                  </div>
-                  <div className="absolute bottom-12 left-20 w-12 h-12 bg-gray-800 rounded-full border-2 border-orange-500/50 animate-spin-slow">
-                    <div className="absolute inset-2 bg-gray-900 rounded-full"></div>
-                  </div>
-                  <div className="absolute bottom-12 right-16 w-12 h-12 bg-gray-800 rounded-full border-2 border-orange-500/50 animate-spin-slow">
-                    <div className="absolute inset-2 bg-gray-900 rounded-full"></div>
-                  </div>
-                  <div className="absolute bottom-12 right-4 w-12 h-12 bg-gray-800 rounded-full border-2 border-orange-500/50 animate-spin-slow">
-                    <div className="absolute inset-2 bg-gray-900 rounded-full"></div>
-                  </div>
+                    <div className="absolute bottom-0 left-20 w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full border-2 border-orange-400/60">
+                      <div className="absolute inset-2 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full">
+                        <div className="absolute inset-1 animate-spin-slow">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-0.5 h-4 bg-orange-400/80 rounded"
+                              style={{
+                                top: '50%',
+                                left: '50%',
+                                transformOrigin: '50% 0',
+                                transform: `translate(-50%, -50%) rotate(${i * 72}deg) translateY(-8px)`,
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
 
-                  {/* Exhaust Smoke */}
-                  <div className="absolute top-8 -right-4 w-8 h-8 bg-gray-400/20 rounded-full animate-pulse"></div>
-                  <div className="absolute top-4 -right-8 w-6 h-6 bg-gray-400/10 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="absolute bottom-0 right-16 w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full border-2 border-orange-400/60">
+                      <div className="absolute inset-2 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full">
+                        <div className="absolute inset-1 animate-spin-slow">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-0.5 h-4 bg-orange-400/80 rounded"
+                              style={{
+                                top: '50%',
+                                left: '50%',
+                                transformOrigin: '50% 0',
+                                transform: `translate(-50%, -50%) rotate(${i * 72}deg) translateY(-8px)`,
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-0 right-2 w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full border-2 border-orange-400/60">
+                      <div className="absolute inset-2 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full">
+                        <div className="absolute inset-1 animate-spin-slow">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-0.5 h-4 bg-orange-400/80 rounded"
+                              style={{
+                                top: '50%',
+                                left: '50%',
+                                transformOrigin: '50% 0',
+                                transform: `translate(-50%, -50%) rotate(${i * 72}deg) translateY(-8px)`,
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cybertruck Details */}
+                    {/* Front Grille/Bumper */}
+                    <div className="absolute left-0 bottom-14 w-6 h-8 bg-gradient-to-r from-gray-500 to-gray-600 transform skew-x-12"></div>
+                    
+                    {/* Side Body Lines */}
+                    <div className="absolute left-24 top-12 w-44 h-0.5 bg-gradient-to-r from-orange-400/60 to-transparent"></div>
+                    <div className="absolute left-24 top-20 w-44 h-0.5 bg-gradient-to-r from-orange-400/40 to-transparent"></div>
+                    
+                    {/* Rear Lights */}
+                    <div className="absolute right-0 top-16 w-1 h-12 bg-gradient-to-b from-red-500 to-red-600 animate-pulse"></div>
+                    
+                    {/* Electric Charging Port */}
+                    <div className="absolute left-32 top-6 w-3 h-2 bg-blue-400 rounded-sm animate-pulse"></div>
+                  </div>
                 </div>
               </div>
 

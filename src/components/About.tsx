@@ -53,8 +53,8 @@ const About = () => {
     <section id="about" ref={sectionRef} className="py-20 bg-gray-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-10 w-40 h-40 border border-orange-500/30 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-32 h-32 border border-orange-400/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 right-10 w-40 h-8 bg-gradient-to-l from-orange-500/30 to-transparent transform rotate-45 animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-32 h-6 bg-gradient-to-r from-orange-400/20 to-transparent transform -rotate-12 animate-pulse"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
